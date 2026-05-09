@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de esbirro de la Comunidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales y fondo */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            /* Usamos tu imagen de fondo con un degradado para que el texto resalte */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://replicate.delivery/pbxt/KjI9b3wXmF7jH0S4QYtN3L8U2M9J6K1V5W4W3/output.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ecf0f1;
+        }
+
+        /* Contenedor con efecto de cristal (Glassmorphism) */
+        .contenedor-formulario {
+            background: rgba(20, 20, 30, 0.85); /* Fondo oscuro semitransparente */
+            backdrop-filter: blur(8px); /* Desenfoque del fondo */
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3); /* Borde dorado sutil */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.1);
+            width: 90%;
+            max-width: 450px;
+            box-sizing: border-box;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Título épico */
+        h2 {
+            font-family: 'Cinzel', serif; /* Fuente estilo RPG */
+            text-align: center;
+            margin-top: 0;
+            color: #ffd700; /* Color oro */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.4);
+            margin-bottom: 30px;
+        }
+
+        /* Etiquetas y campos */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #bdc3c7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto al seleccionar un campo */
+        input:focus, select:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #ffd700;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Estilo especial para el selector */
+        select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        /* Botón de acción épico */
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, #c0392b, #e74c3c);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #e74c3c, #ff4d4d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6), 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        /* Animación suave de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ajuste para dispositivos móviles */
+        @media (max-width: 480px) {
+            .contenedor-formulario {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form action="https://formspree.io/f/mgongvev" method="POST" enctype="multipart/form-data">
+        
+        <div class="contenedor-formulario">
+            <h2>Registro de Héroe</h2>
+
+            <label for="nickname">Nombre de la Leyenda</label>
+            <input type="text" id="nickname" name="nickname" placeholder="Escribe tu nickname de mágic rampage..." required>
+
+            <label for="clase">¿Qué clase usas?</label>
+            <select id="clase" name="clase_heroe" required>
+                <option value="" disabled selected>Elige tu avatar...</option>
+                <option value="hechicero">Hechicero</option>
+                <option value="mago-oscuro">Mago oscuro</option>
+                <option value="mago">Mago</option>
+                <option value="guerrero">Guerrero</option>
+                <option value="guerrero-elite">Guerrero de élite</option>
+                <option value="druida">Druida</option>
+                <option value="picaro">Pícaro</option>
+                <option value="paladin">Paladín</option>
+                <option value="alto-mago">Alto mago</option>
+                <option value="guarda">Guarda</option>
+                <option value="ladron">Ladrón</option>
+                <option value="sacerdote">Sacerdote</option>
+                <option value="brujo">Brujo</option>
+            </select>
+
+            <label for="origen">¿Cómo encontraste nuestro clan TCMD?</label>
+            <select id="origen" name="referencia" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="tiktok">tik tok</option>
+                <option value="facebook">Facebook</option>
+                <option value="amigo">Un aliado</option>
+                <option value="otro">Otros lugares</option>
+            </select>
+
+           <label for="nickname">¿tu numero de whatshap?୧⁠(⁠ ⁠ಠ⁠ ⁠Д⁠ ⁠ಠ⁠ ⁠)⁠୨</label>
+            <input type="text" id="armas" name="numero de celular" placeholder="numero" required
+                    <button type="submit">¡Unirse al clan! :3</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
