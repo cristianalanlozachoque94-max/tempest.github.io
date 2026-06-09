@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA GAMER | Noticias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56663d21c5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- ══ MODAL LOGIN ════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay">
+    <form class="modal-caja" id="modalForm" novalidate>
+        <button type="button" class="modal-cerrar" id="modalCerrar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 class="modal-titulo">Iniciar <span>Sesión</span></h3>
+        <div class="modal-campo">
+            <label for="loginUsuario">Usuario</label>
+            <input type="text" id="loginUsuario" placeholder="Pepito_Perez23" autocomplete="username">
+            <span class="modal-error" id="errorUsuario"></span>
+        </div>
+        <div class="modal-campo">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+            <span class="modal-error" id="errorPassword"></span>
+        </div>
+        <button type="submit" class="modal-submit">Entrar</button>
+        <p class="modal-pie">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </form>
+</div>
+ 
+<!-- ══ NAVBAR ═════════════════════════════════════════════ -->
+<header class="navbar-gamer">
+    <a href="index.html" class="logo">ZONA <span>GAMER</span></a>
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html" class="active">Noticias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+        </ul>
+    </nav>
+    <div class="nav-actions">
+        <button class="btn-gamer btn-login" id="btnEntrar">Entrar</button>
+        <a href="registro.html" class="btn-gamer btn-register">Registrarse</a>
+    </div>
+</header>
+ 
+<!-- ══ PAGE HERO ══════════════════════════════════════════ -->
+<div class="page-hero">
+    <span class="seccion-eyebrow"><i class="fa-solid fa-newspaper"></i> ÚLTIMAS NOTICIAS</span>
+    <h2>Noticias <span>Gamer</span></h2>
+    <p>Todo lo que pasa en el mundo de los videojuegos, en tiempo real.</p>
+</div>
+ 
+<!-- ══ NOTICIAS ═══════════════════════════════════════════ -->
+<section class="seccion">
+    <div class="grid-noticias">
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-gta">
+                <span class="card-badge">DESTACADO</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Rockstar Games</span>
+                <h3 class="card-titulo">GTA 6 rompe internet</h3>
+                <p class="card-texto">Rockstar revela nuevos detalles del juego más esperado de la década con mejoras gráficas y mundo abierto más realista.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-gow">
+                <span class="card-badge card-badge--nuevo">NUEVO</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Sony PlayStation</span>
+                <h3 class="card-titulo">Nuevo God of War</h3>
+                <p class="card-texto">Sony confirma un nuevo título de la saga con historia basada en la mitología nórdica extendida, protagonizado por Faye.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-xbox">
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Microsoft Xbox</span>
+                <h3 class="card-titulo">Xbox vs PlayStation</h3>
+                <p class="card-texto">La competencia entre consolas sigue creciendo con nuevos exclusivos y estrategias de mercado para 2026.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-wolver">
+                <span class="card-badge card-badge--hot">🔥 HOT</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Insomniac Games</span>
+                <h3 class="card-titulo">Wolverine Gameplay</h3>
+                <p class="card-texto">Insomniac muestra el primer gameplay oficial del esperado juego de Marvel con combate brutal y sin censura.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-re">
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Capcom</span>
+                <h3 class="card-titulo">Resident Evil Remake</h3>
+                <p class="card-texto">Capcom anuncia un remake completo de Resident Evil: Code Veronica con gráficos de nueva generación para 2027.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-steam">
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Valve / Steam</span>
+                <h3 class="card-titulo">Steam rompe récord</h3>
+                <p class="card-texto">La plataforma alcanza su mayor número de jugadores simultáneos en la historia con más de 40 millones en línea.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+    </div>
+</section>
+ 
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <p class="footer-logo">ZONA <span>GAMER</span></p>
+            <p class="footer-slogan">Tu portal de noticias, torneos y eventos gamer.</p>
+            <div class="footer-redes">
+                <a href="#" class="footer-red"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-twitch"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Secciones</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="tendencias.html">Tendencias</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Cuenta</h4>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 ZONA GAMER — Todos los derechos reservados</p>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>

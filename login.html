@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA GAMER | Iniciar Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56663d21c5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- ══ NAVBAR ═════════════════════════════════════════════ -->
+<header class="navbar-gamer">
+    <a href="index.html" class="logo">ZONA <span>GAMER</span></a>
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+        </ul>
+    </nav>
+    <div class="nav-actions">
+        <a href="login.html" class="btn-gamer">Entrar</a>
+        <a href="registro.html" class="btn-gamer btn-register">Registrarse</a>
+    </div>
+</header>
+ 
+<!-- ══ FORMULARIO ════════════════════════════════════════ -->
+<main class="form-page">
+    <div class="form-caja">
+        <h2 class="form-titulo">Iniciar <span>Sesión</span></h2>
+        <p class="form-subtitulo">Bienvenido de vuelta, gamer</p>
+ 
+        <form id="formLogin" novalidate>
+ 
+            <div class="form-campo">
+                <label for="loginUsuario">Usuario</label>
+                <input type="text" id="loginUsuario" placeholder="Pepito_Perez23" autocomplete="username">
+                <span class="form-error" id="errUsuario"></span>
+            </div>
+ 
+            <div class="form-campo">
+                <label for="loginPassword">Contraseña</label>
+                <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+                <span class="form-error" id="errPassword"></span>
+            </div>
+ 
+            <button type="submit" class="form-submit">Entrar</button>
+ 
+            <p class="form-pie">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </form>
+    </div>
+</main>
+ 
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <p class="footer-logo">ZONA <span>GAMER</span></p>
+            <p class="footer-slogan">Tu portal de noticias, torneos y eventos gamer.</p>
+            <div class="footer-redes">
+                <a href="#" class="footer-red"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-twitch"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Secciones</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="tendencias.html">Tendencias</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Cuenta</h4>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 ZONA GAMER — Todos los derechos reservados</p>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+<script>
+// ══ VALIDACIÓN LOGIN ═════════════════════════════════════
+(function () {
+    'use strict';
+ 
+    const form = document.getElementById('formLogin');
+ 
+    function marcarValido(input, errSpan) {
+        input.classList.remove('invalido');
+        input.classList.add('valido');
+        errSpan.textContent = '';
+    }
+    function marcarInvalido(input, errSpan, mensaje) {
+        input.classList.remove('valido');
+        input.classList.add('invalido');
+        errSpan.textContent = mensaje;
+    }
+ 
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let esValido = true;
+ 
+        const inputUsuario  = document.getElementById('loginUsuario');
+        const errUsuario    = document.getElementById('errUsuario');
+        const inputPassword = document.getElementById('loginPassword');
+        const errPassword   = document.getElementById('errPassword');
+ 
+        const usuario  = inputUsuario.value.trim();
+        const password = inputPassword.value;
+ 
+        // Validar formato usuario
+        const regexUsuario = /^[a-zA-Z0-9_]{4,20}$/;
+        if (!regexUsuario.test(usuario)) {
+            marcarInvalido(inputUsuario, errUsuario, 'Usuario inválido. Letras, números y _ (mínimo 4 caracteres).');
+            esValido = false;
+        } else {
+            marcarValido(inputUsuario, errUsuario);
+        }
+ 
+        // Validar contraseña
+        if (password.length < 6) {
+            marcarInvalido(inputPassword, errPassword, 'La contraseña debe tener al menos 6 caracteres.');
+            esValido = false;
+        } else {
+            marcarValido(inputPassword, errPassword);
+        }
+ 
+        if (!esValido) return;
+ 
+        // Verificar contra localStorage
+        const usuarioGuardado  = localStorage.getItem('usuarioRegistrado');
+        const passwordGuardada = localStorage.getItem('passwordRegistrada');
+ 
+        if (usuario === usuarioGuardado && password === passwordGuardada) {
+            alert('¡Bienvenido de vuelta, ' + usuario + '!');
+            window.location.href = 'index.html';
+        } else {
+            marcarInvalido(inputUsuario, errUsuario, 'Usuario o contraseña incorrectos.');
+            marcarInvalido(inputPassword, errPassword, '¿Ya registraste tu cuenta?');
+        }
+    });
+})();
+</script>
+</body>
+</html>

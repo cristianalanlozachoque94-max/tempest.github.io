@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA GAMER | Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56663d21c5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- ══ NAVBAR ═════════════════════════════════════════════ -->
+<header class="navbar-gamer">
+    <a href="index.html" class="logo">ZONA <span>GAMER</span></a>
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+        </ul>
+    </nav>
+    <div class="nav-actions">
+        <a href="login.html" class="btn-gamer">Entrar</a>
+        <a href="registro.html" class="btn-gamer btn-register">Registrarse</a>
+    </div>
+</header>
+ 
+<!-- ══ FORMULARIO ════════════════════════════════════════ -->
+<main class="form-page">
+    <div class="form-caja">
+        <h2 class="form-titulo">Crear <span>Cuenta</span></h2>
+        <p class="form-subtitulo">Únete a la comunidad gamer más grande</p>
+ 
+        <form id="formRegistro" novalidate>
+ 
+            <div class="form-fila">
+                <div class="form-campo">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" id="inputNombre" placeholder="Ej. Juan">
+                    <span class="form-error" id="errNombre"></span>
+                </div>
+                <div class="form-campo">
+                    <label for="inputApellido">Apellido</label>
+                    <input type="text" id="inputApellido" placeholder="Ej. Pérez">
+                    <span class="form-error" id="errApellido"></span>
+                </div>
+            </div>
+ 
+            <div class="form-campo">
+                <label for="inputEdad">Edad</label>
+                <input type="number" id="inputEdad" placeholder="Ej. 20" min="1" max="120">
+                <span class="form-error" id="errEdad"></span>
+            </div>
+ 
+            <div class="form-campo">
+                <label for="inputEmail">Correo electrónico</label>
+                <input type="email" id="inputEmail" placeholder="nombre@gmail.com">
+                <span class="form-error" id="errEmail"></span>
+            </div>
+ 
+            <div class="form-campo">
+                <label for="inputTelefono">Teléfono</label>
+                <input type="text" id="inputTelefono" placeholder="Ej. 70012345">
+                <span class="form-error" id="errTelefono"></span>
+            </div>
+ 
+            <div class="form-campo">
+                <label for="inputPassword">Contraseña</label>
+                <input type="password" id="inputPassword" placeholder="Mín. 6 caracteres, 1 mayúscula y 1 número">
+                <span class="form-error" id="errPassword"></span>
+            </div>
+ 
+            <button type="submit" class="form-submit">Crear cuenta</button>
+ 
+            <p class="form-pie">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        </form>
+    </div>
+</main>
+ 
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <p class="footer-logo">ZONA <span>GAMER</span></p>
+            <p class="footer-slogan">Tu portal de noticias, torneos y eventos gamer.</p>
+            <div class="footer-redes">
+                <a href="#" class="footer-red"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="footer-red"><i class="fa-brands fa-twitch"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Secciones</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="tendencias.html">Tendencias</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Cuenta</h4>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 ZONA GAMER — Todos los derechos reservados</p>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+<script>
+// ══ VALIDACIÓN REGISTRO ══════════════════════════════════
+(function () {
+    'use strict';
+ 
+    const form = document.getElementById('formRegistro');
+ 
+    // Helpers
+    function marcarValido(input, errSpan) {
+        input.classList.remove('invalido');
+        input.classList.add('valido');
+        errSpan.textContent = '';
+    }
+    function marcarInvalido(input, errSpan, mensaje) {
+        input.classList.remove('valido');
+        input.classList.add('invalido');
+        errSpan.textContent = mensaje;
+    }
+ 
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let esValido = true;
+ 
+        // ── 1. NOMBRE ──────────────────────────────────
+        const inputNombre  = document.getElementById('inputNombre');
+        const errNombre    = document.getElementById('errNombre');
+        const regexNombre  = /^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-ZÁÉÍÓÚÑ\s]{1,}$/;
+        if (!regexNombre.test(inputNombre.value.trim())) {
+            marcarInvalido(inputNombre, errNombre, 'Ingresa un nombre válido (primera letra mayúscula).');
+            esValido = false;
+        } else {
+            marcarValido(inputNombre, errNombre);
+        }
+ 
+        // ── 2. APELLIDO ────────────────────────────────
+        const inputApellido = document.getElementById('inputApellido');
+        const errApellido   = document.getElementById('errApellido');
+        if (!regexNombre.test(inputApellido.value.trim())) {
+            marcarInvalido(inputApellido, errApellido, 'Ingresa un apellido válido.');
+            esValido = false;
+        } else {
+            marcarValido(inputApellido, errApellido);
+        }
+ 
+        // ── 3. EDAD ────────────────────────────────────
+        const inputEdad = document.getElementById('inputEdad');
+        const errEdad   = document.getElementById('errEdad');
+        const edad      = parseInt(inputEdad.value);
+        if (isNaN(edad) || edad < 18 || edad > 120) {
+            marcarInvalido(inputEdad, errEdad, edad < 18 && !isNaN(edad)
+                ? 'Debes tener al menos 18 años para registrarte.'
+                : 'Ingresa una edad válida (18–120).');
+            esValido = false;
+        } else {
+            marcarValido(inputEdad, errEdad);
+        }
+ 
+        // ── 4. EMAIL ───────────────────────────────────
+        const inputEmail = document.getElementById('inputEmail');
+        const errEmail   = document.getElementById('errEmail');
+        const regexEmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!regexEmail.test(inputEmail.value.trim())) {
+            marcarInvalido(inputEmail, errEmail, 'Ingresa un correo Gmail válido (ejemplo@gmail.com).');
+            esValido = false;
+        } else {
+            marcarValido(inputEmail, errEmail);
+        }
+ 
+        // ── 5. TELÉFONO ────────────────────────────────
+        const inputTel = document.getElementById('inputTelefono');
+        const errTel   = document.getElementById('errTelefono');
+        const regexTel = /^\+?[0-9]{7,15}$/;
+        if (!regexTel.test(inputTel.value.trim())) {
+            marcarInvalido(inputTel, errTel, 'Ingresa un número de teléfono válido (7–15 dígitos).');
+            esValido = false;
+        } else {
+            marcarValido(inputTel, errTel);
+        }
+ 
+        // ── 6. CONTRASEÑA ──────────────────────────────
+        const inputPassword = document.getElementById('inputPassword');
+        const errPassword   = document.getElementById('errPassword');
+        const regexPass     = /^(?=.*[A-Z])(?=.*[0-9]).{6,}$/;
+        if (inputPassword.value.trim() === '') {
+            marcarInvalido(inputPassword, errPassword, 'La contraseña no puede estar vacía.');
+            esValido = false;
+        } else if (!regexPass.test(inputPassword.value)) {
+            marcarInvalido(inputPassword, errPassword, 'Mínimo 6 caracteres, una mayúscula y un número.');
+            esValido = false;
+        } else {
+            marcarValido(inputPassword, errPassword);
+        }
+ 
+        // ── GUARDAR Y REDIRIGIR ────────────────────────
+        if (esValido) {
+            localStorage.setItem('usuarioRegistrado', inputNombre.value.trim());
+            localStorage.setItem('passwordRegistrada', inputPassword.value);
+            localStorage.setItem('emailRegistrado', inputEmail.value.trim());
+            alert('¡Registro exitoso! Bienvenido a Zona Gamer.');
+            form.reset();
+            form.querySelectorAll('.valido').forEach(el => el.classList.remove('valido'));
+            window.location.href = 'index.html';
+        }
+    });
+})();
+</script>
+</body>
+</html>

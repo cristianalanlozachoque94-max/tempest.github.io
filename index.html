@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZONA GAMER | Portal de Videojuegos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56663d21c5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- ══ MODAL LOGIN ════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay">
+    <form class="modal-caja" id="modalForm" novalidate>
+        <button type="button" class="modal-cerrar" id="modalCerrar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 class="modal-titulo">Iniciar <span>Sesión</span></h3>
+        <div class="modal-campo">
+            <label for="loginUsuario">Usuario</label>
+            <input type="text" id="loginUsuario" placeholder="Pepito_Perez23" autocomplete="username">
+            <span class="modal-error" id="errorUsuario"></span>
+        </div>
+        <div class="modal-campo">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+            <span class="modal-error" id="errorPassword"></span>
+        </div>
+        <button type="submit" class="modal-submit">Entrar</button>
+        <p class="modal-pie">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </form>
+</div>
+ 
+<!-- ══ NAVBAR ═════════════════════════════════════════════ -->
+<header class="navbar-gamer">
+    <a href="index.html" class="logo">ZONA <span>GAMER</span></a>
+ 
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+ 
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+        </ul>
+    </nav>
+ 
+    <div class="nav-actions">
+        <button class="btn-gamer btn-login" id="btnEntrar">Entrar</button>
+        <a href="registro.html" class="btn-gamer btn-register">Registrarse</a>
+    </div>
+</header>
+ 
+<!-- ══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-eyebrow">COMUNIDAD EN VIVO</span>
+        <h1>Descubre el mundo<br><span class="glow">gamer</span> en un solo lugar</h1>
+        <p>Noticias, eventos, torneos y tendencias<br>de los videojuegos más importantes del momento.</p>
+        <div class="hero-buttons">
+            <a href="eventos.html" class="btn-gamer">
+                <i class="fa-solid fa-calendar-days"></i> Ver Eventos
+            </a>
+            <a href="noticias.html" class="btn-gamer btn-outline">
+                <i class="fa-solid fa-newspaper"></i> Ver Noticias
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <span class="hero-stat-num">12K+</span>
+                <span class="hero-stat-label">Jugadores</span>
+            </div>
+            <div>
+                <span class="hero-stat-num">340</span>
+                <span class="hero-stat-label">Noticias</span>
+            </div>
+            <div>
+                <span class="hero-stat-num">28</span>
+                <span class="hero-stat-label">Torneos</span>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- ══ TICKER ═════════════════════════════════════════════ -->
+<div class="ticker">
+    <span class="ticker-label"><i class="fa-solid fa-bolt"></i> BREAKING</span>
+    <div class="ticker-pista">
+        <span class="ticker-texto">
+            GTA 6 — fecha confirmada: 26 sep &nbsp;•&nbsp;
+            God of War: Laufey anunciado para PS5 &nbsp;•&nbsp;
+            Marvel's Wolverine — estreno 15 sep &nbsp;•&nbsp;
+            Resident Evil Veronica — llega en 2027 &nbsp;•&nbsp;
+            Xbox Series X Edición 25 Aniversario — noviembre &nbsp;•&nbsp;
+            Silent Hill: Townfall — nuevo tráiler revelado &nbsp;•&nbsp;
+            GTA 6 — fecha confirmada: 26 sep &nbsp;•&nbsp;
+            God of War: Laufey anunciado para PS5 &nbsp;•&nbsp;
+            Marvel's Wolverine — estreno 15 sep &nbsp;•&nbsp;
+            Resident Evil Veronica — llega en 2027 &nbsp;•&nbsp;
+        </span>
+    </div>
+</div>
+ 
+<!-- ══ NOTICIAS ═══════════════════════════════════════════ -->
+<section class="seccion" id="noticias">
+    <span class="seccion-eyebrow">NOTICIAS RECIENTES</span>
+    <h2 class="seccion-titulo">Últimas <span>novedades</span></h2>
+    <div class="grid-noticias">
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-gta">
+                <span class="card-badge">DESTACADO</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Rockstar Games</span>
+                <h3 class="card-titulo">GTA 6 rompe internet</h3>
+                <p class="card-texto">Rockstar confirmó el lanzamiento para el 26 de septiembre. El nuevo tráiler supera todos los récords de visualización en YouTube.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-gow">
+                <span class="card-badge card-badge--nuevo">NUEVO</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Sony PlayStation</span>
+                <h3 class="card-titulo">Nuevo God of War: Laufey</h3>
+                <p class="card-texto">Sony anunció una precuela nórdica protagonizada por Faye, la madre de Atreus, exclusiva para PS5.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+        <article class="card-noticia">
+            <div class="card-noticia__img img-wolver">
+                <span class="card-badge card-badge--hot">🔥 HOT</span>
+            </div>
+            <div class="card-noticia__body">
+                <span class="card-categoria">Insomniac Games</span>
+                <h3 class="card-titulo">Gameplay de Wolverine revelado</h3>
+                <p class="card-texto">Insomniac mostró el violento combate de Marvel's Wolverine. Estreno confirmado para el 15 de septiembre en PS5.</p>
+                <a class="card-link" href="#">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+ 
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+        <a href="noticias.html" class="btn-gamer">Ver todas las noticias</a>
+    </div>
+</section>
+ 
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <p class="footer-logo">ZONA <span>GAMER</span></p>
+            <p class="footer-slogan">Tu portal de noticias, torneos y eventos gamer. Siempre conectado con el mundo de los videojuegos.</p>
+            <div class="footer-redes">
+                <a href="#" class="footer-red" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="footer-red" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="footer-red" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="footer-red" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
+                <a href="#" class="footer-red" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Secciones</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="tendencias.html">Tendencias</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Cuenta</h4>
+            <ul>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 ZONA GAMER — Todos los derechos reservados</p>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
